@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PodcastsSearchController: UITableViewController {
+class PodcastsSearchController: UITableViewController, UISearchBarDelegate {
     
     let fakePodcasts = [
         Podcast(name: "Dobre banane", artistName: "Danko Bananko"),
@@ -18,11 +18,29 @@ class PodcastsSearchController: UITableViewController {
     
     let cellId = "cellid"
     
+    // UIsearchController
+    let searchController = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchBar()
+        setupTableView()
+    }
+    
+    fileprivate func setupTableView() {
         // register a cell for table view
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+    }
+    
+    fileprivate func setupSearchBar() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
