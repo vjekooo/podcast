@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [
             generateNavigationController(with: ViewController(), title: "Favorites", image: #imageLiteral(resourceName: "favorites")),
-            generateNavigationController(with: ViewController(), title: "Search", image: #imageLiteral(resourceName: "search") ),
+            generateNavigationController(with: PodcastsSearchController(), title: "Search", image: #imageLiteral(resourceName: "search") ),
             generateNavigationController(with: ViewController(), title: "Downloads", image: #imageLiteral(resourceName: "downloads"))
         ]
     }
