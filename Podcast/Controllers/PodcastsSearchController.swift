@@ -11,11 +11,7 @@ import Alamofire
 
 class PodcastsSearchController: UITableViewController, UISearchBarDelegate {
     
-    var podcasts = [
-        Podcast(trackName: "Dobre banane", artistName: "Danko Bananko"),
-        Podcast(trackName: "Eto me za po ure", artistName: "Niko Balić"),
-        Podcast(trackName: "Bmw je sranje", artistName: "Koki")
-    ]
+    var podcasts = [Podcast]()
     
     let cellId = "cellid"
     
@@ -33,6 +29,9 @@ class PodcastsSearchController: UITableViewController, UISearchBarDelegate {
         // register a cell for table view
         
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        // remove horizontal lines from table
+        tableView.tableFooterView = UIView()
         
         let nib = UINib(nibName: "PodcastCell", bundle: nil)
         
@@ -56,6 +55,19 @@ class PodcastsSearchController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return podcasts.count
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Search for some podcasts"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        
+        return label
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.podcasts.count > 0 ? 0 : 250
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

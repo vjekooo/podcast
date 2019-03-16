@@ -7,5 +7,6 @@ target 'Podcast' do
 
   # Pods for Podcast
   pod 'Alamofire', '~> 4.5'
+  pod 'SDWebImage', '~> 4.0'
 
 end
