@@ -13,11 +13,16 @@ class PodcastInfoCell: UITableViewCell {
     
     @IBOutlet weak var podcastImageView: UIImageView!
     
-    @IBOutlet weak var podcastTitleLabel: UILabel!
+    @IBOutlet weak var podcastTitleLabel: UILabel! {
+        didSet {
+            podcastTitleLabel.numberOfLines = 2
+        }
+    }
     
     @IBOutlet weak var podcastProviderLabel: UILabel!
     
     @IBOutlet weak var podcastDescriptionText: UITextView!
+    
     
     var podcastInfo: PodcastInfo! {
         didSet {

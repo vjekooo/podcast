@@ -82,6 +82,7 @@ class PodcastInfoController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PodcastInfoCell
         
         //let podcastInfo = self.podcastInfo[0]
