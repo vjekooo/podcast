@@ -14,11 +14,13 @@ struct Episode {
     let title: String
     let description: String
     let duration: Double
+    let audioStream: String
     
     init(feedItem: RSSFeedItem) {
         self.pubDate = feedItem.pubDate ?? Date()
         self.title = feedItem.title ?? ""
         self.description = feedItem.description ?? ""
         self.duration = feedItem.iTunes?.iTunesDuration ?? 0
+        self.audioStream = feedItem.enclosure?.attributes?.url ?? ""
     }
 }

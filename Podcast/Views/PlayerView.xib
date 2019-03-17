@@ -67,25 +67,28 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="CeT-vY-VtV">
                             <rect key="frame" x="0.0" y="466" width="335" height="129"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZR-jG-IMV">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZR-jG-IMV">
                                     <rect key="frame" x="0.0" y="0.0" width="45" height="129"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="45" id="7E5-pB-iMa"/>
                                     </constraints>
+                                    <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Button" image="rewind15"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3w-Gc-6ob">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3w-Gc-6ob">
                                     <rect key="frame" x="145" y="0.0" width="45" height="129"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="45" id="qM2-ti-jL7"/>
                                     </constraints>
+                                    <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Button" image="play"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qu-7H-2UP">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qu-7H-2UP">
                                     <rect key="frame" x="290" y="0.0" width="45" height="129"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="45" id="Zsp-Jg-d9Q"/>
                                     </constraints>
+                                    <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Button" image="fastforward15"/>
                                 </button>
                             </subviews>
@@ -122,6 +125,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="S0p-ea-DFw"/>
             <connections>
+                <outlet property="playPauseButton" destination="v3w-Gc-6ob" id="8nX-8p-0Qm"/>
                 <outlet property="playerImageView" destination="fDv-0Y-jV2" id="9Bl-Rj-33d"/>
                 <outlet property="playerTitleLabel" destination="enL-pP-1KD" id="Rrr-G5-xBb"/>
             </connections>

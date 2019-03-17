@@ -51,6 +51,7 @@ class PodcastInfoController: UITableViewController {
     
     var podcastTitle: String?
     var podcastDescription: String?
+    //var podcastProvider: String?
     var podcastImage: String?
     
     var podcastInfo = [PodcastInfo]()
@@ -98,6 +99,7 @@ class PodcastInfoController: UITableViewController {
         
         cell.podcastTitleLabel.text = podcastTitle
         cell.podcastDescriptionText.text = podcastDescription
+        //cell.podcastProviderLabel.text = podcastProvider
         cell.podcastImageView.sd_setImage(with: url, completed: nil)
         
         return cell

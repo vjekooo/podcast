@@ -12,9 +12,11 @@ import FeedKit
 struct PodcastInfo {
     let title: String
     let description: String
+    let provider: String
     
     init(feed: RSSFeed) {
         self.title = feed.title ?? ""
         self.description = feed.description ?? ""
+        self.provider = feed.iTunes?.iTunesAuthor ?? ""
     }
 }
