@@ -19,34 +19,14 @@ class EpisodesController: UITableViewController {
     }
     
     fileprivate func fetchEpisodes() {
-        guard let feedURL = podcast?.feedUrl else { return }
-        guard let url = URL(string: feedURL) else { return}
-        let parser = FeedParser(URL: url)
-        
-        parser?.parseAsync(result: { (result) in
-            switch result {
-            case let .rss(feed):
-                
-                var episodes = [Episode]()
-                
-                feed.items?.forEach({ (feedItem) in
-                    let episode = Episode(feedItem: feedItem)
-                    episodes.append(episode)
-                })
-                
-                self.episodes = episodes
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                
-            case let .failure(error):
-                print(error)
-                break
-            default:
-                break
+        guard let feedUrl = podcast?.feedUrl else { return }
+        APIService.shared.fetchEpisodes(feedUrl: feedUrl) { (episodes) in
+            self.episodes = episodes
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-        })
+        }
+        
     }
     
     var episodes = [Episode]()

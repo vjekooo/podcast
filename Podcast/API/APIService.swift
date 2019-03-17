@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import FeedKit
 
 class APIService {
     // singleton
@@ -35,6 +36,30 @@ class APIService {
                 print("Failed to decode", decodeErr)
             }
         }
+    }
+    
+    func fetchEpisodes(feedUrl: String, completionHandler: @escaping ([Episode]) -> ()) {
+        guard let url = URL(string: feedUrl) else { return}
+        let parser = FeedParser(URL: url)
+        
+        parser?.parseAsync(result: { (result) in
+            
+            if let err = result.error {
+                print("Failed to parse episode data", err)
+                return
+            }
+            
+            guard let feed = result.rssFeed else { return }
+            
+            var episodes = [Episode]()
+            
+            feed.items?.forEach({ (feedItem) in
+                let episode = Episode(feedItem: feedItem)
+                episodes.append(episode)
+            })
+            
+            completionHandler(episodes)
+        })
     }
     
     struct SearchResults: Decodable {
