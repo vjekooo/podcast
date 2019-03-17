@@ -49,6 +49,19 @@ class EpisodesController: UITableViewController {
         tableView.register(nib, forCellReuseIdentifier: cellId)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = self.episodes[indexPath.row]
+        
+        let window = UIApplication.shared.keyWindow
+        
+        let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as! PlayerView
+        
+        playerView.episode = episode
+        playerView.backgroundColor = .white
+        playerView.frame = self.view.frame
+        window?.addSubview(playerView)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
     }
