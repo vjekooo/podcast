@@ -21,7 +21,7 @@ class APIService {
         
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseData { (dataResponse) in
             if let err = dataResponse.error {
-                print("Failed to yahooo", err)
+                print("Failed to fetch data", err)
                 return
             }
             guard let data = dataResponse.data else {return}

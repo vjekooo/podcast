@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="KM0-Bh-79P" customClass="PodcastInfoCell" customModule="Podcast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="472" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KM0-Bh-79P" id="Rgk-R7-S80">
+                <rect key="frame" x="0.0" y="0.0" width="472" height="299.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-2u-wir">
+                        <rect key="frame" x="21" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7ma-Jq-jiR"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Meg-18-Tck"/>
+                            <constraint firstAttribute="height" constant="100" id="U7g-Kf-b1j"/>
+                            <constraint firstAttribute="width" constant="100" id="qNl-eI-BzC"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-QG-Eax">
+                        <rect key="frame" x="131" y="19" width="311" height="57.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-j2-qD1">
+                                <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-Rf-KVl">
+                                <rect key="frame" x="0.0" y="39.5" width="311" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Podcast description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Nw-1X-ckx">
+                        <rect key="frame" x="21" y="140" width="431" height="126"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Ce-QG-Eax" secondAttribute="trailing" constant="10" id="38z-TX-hk8"/>
+                    <constraint firstItem="1Ce-QG-Eax" firstAttribute="top" secondItem="Rgk-R7-S80" secondAttribute="topMargin" constant="8" id="BcI-pM-iav"/>
+                    <constraint firstItem="Flf-2u-wir" firstAttribute="top" secondItem="Rgk-R7-S80" secondAttribute="topMargin" constant="8" id="GMR-ZD-zme"/>
+                    <constraint firstItem="1Ce-QG-Eax" firstAttribute="leading" secondItem="Flf-2u-wir" secondAttribute="trailing" constant="10" id="cqs-R6-nvc"/>
+                    <constraint firstItem="Flf-2u-wir" firstAttribute="leading" secondItem="Rgk-R7-S80" secondAttribute="leadingMargin" constant="1" id="egj-Qq-MZq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="podcastDescriptionText" destination="7Nw-1X-ckx" id="fem-Ey-iWh"/>
+                <outlet property="podcastImageView" destination="Flf-2u-wir" id="RWc-cJ-EHz"/>
+                <outlet property="podcastProviderLabel" destination="05d-Rf-KVl" id="nfM-gD-qo8"/>
+                <outlet property="podcastTitleLabel" destination="LAf-j2-qD1" id="Vd8-OA-Goi"/>
+            </connections>
+            <point key="canvasLocation" x="25.600000000000001" y="-72.863568215892059"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="appicon" width="60" height="60"/>
+    </resources>
+</document>
