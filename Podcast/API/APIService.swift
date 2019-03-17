@@ -39,27 +39,32 @@ class APIService {
     }
     
     func fetchEpisodes(feedUrl: String, completionHandler: @escaping ([Episode]) -> ()) {
-        guard let url = URL(string: feedUrl) else { return}
-        let parser = FeedParser(URL: url)
         
-        parser?.parseAsync(result: { (result) in
+        guard let url = URL(string: feedUrl) else { return}
+        
+        DispatchQueue.global(qos: .background).async {
+            let parser = FeedParser(URL: url)
             
-            if let err = result.error {
-                print("Failed to parse episode data", err)
-                return
-            }
-            
-            guard let feed = result.rssFeed else { return }
-            
-            var episodes = [Episode]()
-            
-            feed.items?.forEach({ (feedItem) in
-                let episode = Episode(feedItem: feedItem)
-                episodes.append(episode)
+            parser?.parseAsync(result: { (result) in
+                
+                if let err = result.error {
+                    print("Failed to parse episode data", err)
+                    return
+                }
+                
+                guard let feed = result.rssFeed else { return }
+                
+                var episodes = [Episode]()
+                
+                feed.items?.forEach({ (feedItem) in
+                    let episode = Episode(feedItem: feedItem)
+                    episodes.append(episode)
+                })
+                
+                completionHandler(episodes)
             })
-            
-            completionHandler(episodes)
-        })
+        }
+        
     }
     
     struct SearchResults: Decodable {
