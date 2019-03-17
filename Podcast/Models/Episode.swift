@@ -15,6 +15,7 @@ struct Episode {
     let description: String
     let duration: Double
     let audioStream: String
+    let artwork: String
     
     init(feedItem: RSSFeedItem) {
         self.pubDate = feedItem.pubDate ?? Date()
@@ -22,5 +23,6 @@ struct Episode {
         self.description = feedItem.description ?? ""
         self.duration = feedItem.iTunes?.iTunesDuration ?? 0
         self.audioStream = feedItem.enclosure?.attributes?.url ?? ""
+        self.artwork = feedItem.iTunes?.iTunesImage?.attributes?.href ?? ""
     }
 }

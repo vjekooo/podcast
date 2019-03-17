@@ -15,6 +15,9 @@ class PlayerView: UIView {
         didSet {
             playerTitleLabel.text = episode.title
             
+            //guard let url = URL(string: episode.artwork) else { return }
+            //playerImageView.sd_setImage(with: url, completed: nil)
+            
             playEpisode()
         }
     }
@@ -32,7 +35,82 @@ class PlayerView: UIView {
         return avPlayer
     }()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let interval = CMTimeMake(value: 1, timescale: 2)
+        
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
+            
+            self.playerStartTimeLabel.text = time.displayTimeString()
+            
+            let duration = self.player.currentItem?.duration
+            
+            self.playerEndTimeLabel.text = duration?.displayTimeString()
+            
+            self.updateTimeSlider()
+        }
+    }
+    
+    fileprivate func updateTimeSlider() {
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        
+        let percentage = currentTime / duration
+        
+        self.playerTimeSlider.value = Float(percentage)
+    }
+    
     // MARK:- Actions and Outlets
+    
+    @IBAction func playerVolumeSliderAction(_ sender: UISlider) {
+        player.volume = sender.value
+    }
+    
+    @IBAction func playerRewindAction(_ sender: Any) {
+        
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        
+        let rewind = Float64(currentTime) - 15
+        
+        let seekTime = CMTimeMakeWithSeconds(rewind, preferredTimescale: Int32(NSEC_PER_SEC))
+        
+        player.seek(to: seekTime)
+    }
+    
+    
+    @IBAction func playerFastForwardAction(_ sender: Any) {
+        
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        
+        let rewind = Float64(currentTime) + 15
+        
+        let seekTime = CMTimeMakeWithSeconds(rewind, preferredTimescale: Int32(NSEC_PER_SEC))
+        
+        player.seek(to: seekTime)
+    }
+    
+    @IBAction func playerTimeSliderAction(_ sender: Any) {
+        print(playerTimeSlider.value)
+        
+        let percentage = playerTimeSlider.value
+        
+        guard let duration = player.currentItem?.duration else { return }
+        
+        let seconds = CMTimeGetSeconds(duration)
+        
+        let seekTimeSeconds = seconds * Float64(percentage)
+        
+        let seekTime = CMTimeMakeWithSeconds(seekTimeSeconds, preferredTimescale: Int32(NSEC_PER_SEC))
+        
+        player.seek(to: seekTime)
+    }
+    
+    @IBOutlet weak var playerTimeSlider: UISlider!
+    
+    @IBOutlet weak var playerStartTimeLabel: UILabel!
+    
+    @IBOutlet weak var playerEndTimeLabel: UILabel!
     
     @IBAction func playerCloseButton(_ sender: Any) {
         self.removeFromSuperview()
