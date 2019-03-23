@@ -14,7 +14,7 @@ class PlayerView: UIView {
     var episode: Episode! {
         didSet {
             playerTitleLabel.text = episode.title
-            
+            miniPlayerTitleLabel.text = episode.title
             //guard let url = URL(string: episode.artwork) else { return }
             //playerImageView.sd_setImage(with: url, completed: nil)
             
@@ -153,9 +153,25 @@ class PlayerView: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            miniPlayerPlayPause.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         } else {
             player.pause()
             playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            miniPlayerPlayPause.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         }
     }
+    
+    @IBOutlet weak var miniPlayerImageView: UIImageView!
+    
+    @IBOutlet weak var miniPlayerTitleLabel: UILabel!
+    
+    @IBOutlet weak var miniPlayerPlayPause: UIButton! {
+        didSet {
+            miniPlayerPlayPause.addTarget(self, action: #selector(handlePlayPause), for: .touchUpInside)
+        }
+    }
+    
+    @IBOutlet weak var maxPlayerView: UIStackView!
+    
+    @IBOutlet weak var minPlayerView: UIView!
 }

@@ -16,6 +16,47 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5q-Jy-tfF">
+                    <rect key="frame" x="0.0" y="20" width="375" height="65"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="q3d-9G-25E">
+                            <rect key="frame" x="5" y="5" width="365" height="55"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U6x-Uu-hNJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="I18-eF-MOM"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-j8-R7L">
+                                    <rect key="frame" x="58" y="0.0" width="259" height="55"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-H2-9JY">
+                                    <rect key="frame" x="325" y="0.0" width="40" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Lmr-YG-jWp"/>
+                                        <constraint firstAttribute="width" constant="40" id="hKL-sS-rfp"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Button" image="pause">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="q3d-9G-25E" firstAttribute="leading" secondItem="u5q-Jy-tfF" secondAttribute="leading" constant="5" id="D8j-3Y-Izp"/>
+                        <constraint firstAttribute="height" constant="65" id="Nuj-Af-Jla"/>
+                        <constraint firstAttribute="trailing" secondItem="q3d-9G-25E" secondAttribute="trailing" constant="5" id="dvv-6e-ozm"/>
+                        <constraint firstItem="q3d-9G-25E" firstAttribute="top" secondItem="u5q-Jy-tfF" secondAttribute="top" constant="5" id="mLi-B7-RBt"/>
+                        <constraint firstAttribute="bottom" secondItem="q3d-9G-25E" secondAttribute="bottom" constant="5" id="oV3-ZO-BFg"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SxM-JH-bYZ">
                     <rect key="frame" x="20" y="20" width="335" height="627"/>
                     <subviews>
@@ -132,11 +173,19 @@
             <constraints>
                 <constraint firstItem="S0p-ea-DFw" firstAttribute="bottom" secondItem="SxM-JH-bYZ" secondAttribute="bottom" constant="20" id="1MG-3O-inC"/>
                 <constraint firstItem="SxM-JH-bYZ" firstAttribute="top" secondItem="S0p-ea-DFw" secondAttribute="top" id="Glu-7r-kE8"/>
+                <constraint firstItem="u5q-Jy-tfF" firstAttribute="top" secondItem="S0p-ea-DFw" secondAttribute="top" id="LFL-Fg-YSG"/>
                 <constraint firstItem="SxM-JH-bYZ" firstAttribute="leading" secondItem="S0p-ea-DFw" secondAttribute="leading" constant="20" id="UgY-0s-Vn9"/>
+                <constraint firstItem="S0p-ea-DFw" firstAttribute="trailing" secondItem="u5q-Jy-tfF" secondAttribute="trailing" id="XjW-M4-qmG"/>
                 <constraint firstItem="S0p-ea-DFw" firstAttribute="trailing" secondItem="SxM-JH-bYZ" secondAttribute="trailing" constant="20" id="Zuw-F1-vNP"/>
+                <constraint firstItem="u5q-Jy-tfF" firstAttribute="leading" secondItem="S0p-ea-DFw" secondAttribute="leading" id="seJ-7j-qxd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="S0p-ea-DFw"/>
             <connections>
+                <outlet property="maxPlayerView" destination="SxM-JH-bYZ" id="5In-h9-a4a"/>
+                <outlet property="minPlayerView" destination="u5q-Jy-tfF" id="Lo2-HF-4xm"/>
+                <outlet property="miniPlayerImageView" destination="U6x-Uu-hNJ" id="Ue9-H0-CJn"/>
+                <outlet property="miniPlayerPlayPause" destination="z0r-H2-9JY" id="dQU-FC-7IM"/>
+                <outlet property="miniPlayerTitleLabel" destination="V0T-j8-R7L" id="w5R-oA-RtU"/>
                 <outlet property="playPauseButton" destination="v3w-Gc-6ob" id="8nX-8p-0Qm"/>
                 <outlet property="playerEndTimeLabel" destination="5jm-OS-8pi" id="QGY-NO-3hj"/>
                 <outlet property="playerImageView" destination="fDv-0Y-jV2" id="9Bl-Rj-33d"/>
@@ -151,6 +200,7 @@
         <image name="fastforward15" width="45.5" height="45.5"/>
         <image name="max_volume" width="32.5" height="32.5"/>
         <image name="muted_volume" width="32.5" height="32.5"/>
+        <image name="pause" width="57" height="57"/>
         <image name="play" width="59" height="59"/>
         <image name="rewind15" width="45.5" height="45.5"/>
     </resources>
