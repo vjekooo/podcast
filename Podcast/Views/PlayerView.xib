@@ -29,17 +29,13 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-j8-R7L">
-                                    <rect key="frame" x="58" y="0.0" width="259" height="55"/>
+                                    <rect key="frame" x="58" y="0.0" width="88.5" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-H2-9JY">
-                                    <rect key="frame" x="325" y="0.0" width="40" height="55"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="Lmr-YG-jWp"/>
-                                        <constraint firstAttribute="width" constant="40" id="hKL-sS-rfp"/>
-                                    </constraints>
+                                    <rect key="frame" x="154.5" y="0.0" width="210.5" height="55"/>
                                     <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Button" image="pause">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -31,6 +31,8 @@ class MainTabBarController: UITabBarController {
         maxTopAnchorConstraint.isActive = false
         minTopAnchorConstraint.isActive = true
         
+        bottomAnchorConstraint.constant = view.frame.height
+        
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             
             self.view.layoutIfNeeded()
@@ -46,6 +48,8 @@ class MainTabBarController: UITabBarController {
         maxTopAnchorConstraint.isActive = true
         maxTopAnchorConstraint.constant = 0
         minTopAnchorConstraint.isActive = false
+    
+        bottomAnchorConstraint.constant = 0
     
         if (episode != nil) {
             playerView.episode = episode
@@ -65,6 +69,7 @@ class MainTabBarController: UITabBarController {
     
     var maxTopAnchorConstraint: NSLayoutConstraint!
     var minTopAnchorConstraint: NSLayoutConstraint!
+    var bottomAnchorConstraint: NSLayoutConstraint!
     
     fileprivate func setupPlayerView() {
         view.insertSubview(playerView, belowSubview: tabBar)
@@ -78,7 +83,9 @@ class MainTabBarController: UITabBarController {
         
         minTopAnchorConstraint = playerView.topAnchor.constraint(equalTo: tabBar.topAnchor, constant: -65)
         
-        playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bottomAnchorConstraint = playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.height)
+        bottomAnchorConstraint.isActive = true
+        
         playerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         playerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
