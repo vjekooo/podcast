@@ -40,15 +40,15 @@ class PlayerView: UIView {
         
         let interval = CMTimeMake(value: 1, timescale: 2)
         
-        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self](time) in
             
-            self.playerStartTimeLabel.text = time.displayTimeString()
+            self?.playerStartTimeLabel.text = time.displayTimeString()
             
-            let duration = self.player.currentItem?.duration
+            let duration = self?.player.currentItem?.duration
             
-            self.playerEndTimeLabel.text = duration?.displayTimeString()
+            self?.playerEndTimeLabel.text = duration?.displayTimeString()
             
-            self.updateTimeSlider()
+            self?.updateTimeSlider()
         }
     }
     
