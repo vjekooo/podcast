@@ -388,7 +388,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Controllers/EpisodesController.swift"
-            timestampString = "575039645.588346"
+            timestampString = "575046518.793353"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -481,7 +481,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.932896"
+            timestampString = "575046518.793458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -497,7 +497,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9337161"
+            timestampString = "575046518.793581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -529,11 +529,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.934584"
+            timestampString = "575046518.793722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "playerFastForwardAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -545,11 +545,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9358571"
+            timestampString = "575046518.793842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "playerTitleLabel"
             landmarkType = "24">
          </BreakpointContent>
@@ -561,7 +561,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.93678"
+            timestampString = "575046518.7939529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -577,7 +577,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.938645"
+            timestampString = "575046518.794049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -593,7 +593,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.939767"
+            timestampString = "575046518.794139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -609,11 +609,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9404809"
+            timestampString = "575046518.794227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "playerTimeSliderAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -625,7 +625,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9410681"
+            timestampString = "575046518.794304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -641,11 +641,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.941631"
+            timestampString = "575046518.794379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -655,11 +655,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.942219"
+            timestampString = "575046518.794451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -669,11 +669,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9427201"
+            timestampString = "575046518.79452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "PlayerView"
             landmarkType = "3">
          </BreakpointContent>
@@ -685,11 +685,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.943254"
+            timestampString = "575046518.7946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -699,11 +699,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.943756"
+            timestampString = "575046518.794683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -713,11 +713,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.944224"
+            timestampString = "575046518.794769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -727,27 +727,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.9446729"
+            timestampString = "575046518.794858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "awakeFromNib()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Podcast/Views/PlayerView.swift"
-            timestampString = "575042683.945154"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "playerRewindAction(_:)"
             landmarkType = "7">
          </BreakpointContent>

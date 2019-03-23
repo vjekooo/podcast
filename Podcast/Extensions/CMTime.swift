@@ -12,6 +12,9 @@ extension CMTime {
     
     func displayTimeString() -> String {
         
+        if CMTimeGetSeconds(self).isNaN {
+            return "--:--"
+        }
         let timeInterval = Int(CMTimeGetSeconds(self))
         let minutes = timeInterval / 60
         let seconds = timeInterval % 60

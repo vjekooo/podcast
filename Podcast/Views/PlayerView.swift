@@ -35,9 +35,7 @@ class PlayerView: UIView {
         return avPlayer
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    fileprivate func observePodcastTime() {
         let interval = CMTimeMake(value: 1, timescale: 2)
         
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self](time) in
@@ -50,6 +48,23 @@ class PlayerView: UIView {
             
             self?.updateTimeSlider()
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapToMaximize)))
+        
+        observePodcastTime()
+    }
+    
+    @objc func handleTapToMaximize() {
+        let mainTabBar = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+        mainTabBar.maximizePlayerView(episode: nil)
+    }
+    
+    static func initFromNib() -> PlayerView {
+        return Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as! PlayerView
     }
     
     fileprivate func updateTimeSlider() {
@@ -113,7 +128,9 @@ class PlayerView: UIView {
     @IBOutlet weak var playerEndTimeLabel: UILabel!
     
     @IBAction func playerCloseButton(_ sender: Any) {
-        self.removeFromSuperview()
+        //self.removeFromSuperview()
+        let mainTabBar = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+        mainTabBar.minimizePlayerView()
     }
     
     @IBOutlet weak var playerImageView: UIImageView!
