@@ -35,21 +35,36 @@ class PlayerView: UIView {
         return avPlayer
     }()
     
+    fileprivate func observePodcastTime() {
+        let interval = CMTimeMake(value: 1, timescale: 2)
+        
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self](time) in
+            
+            self?.playerStartTimeLabel.text = time.displayTimeString()
+            
+            let duration = self?.player.currentItem?.duration
+            
+            self?.playerEndTimeLabel.text = duration?.displayTimeString()
+            
+            self?.updateTimeSlider()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let interval = CMTimeMake(value: 1, timescale: 2)
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapToMaximize)))
         
-        player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { (time) in
-            
-            self.playerStartTimeLabel.text = time.displayTimeString()
-            
-            let duration = self.player.currentItem?.duration
-            
-            self.playerEndTimeLabel.text = duration?.displayTimeString()
-            
-            self.updateTimeSlider()
-        }
+        observePodcastTime()
+    }
+    
+    @objc func handleTapToMaximize() {
+        let mainTabBar = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+        mainTabBar.maximizePlayerView(episode: nil)
+    }
+    
+    static func initFromNib() -> PlayerView {
+        return Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as! PlayerView
     }
     
     fileprivate func updateTimeSlider() {
@@ -113,7 +128,9 @@ class PlayerView: UIView {
     @IBOutlet weak var playerEndTimeLabel: UILabel!
     
     @IBAction func playerCloseButton(_ sender: Any) {
-        self.removeFromSuperview()
+        //self.removeFromSuperview()
+        let mainTabBar = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+        mainTabBar.minimizePlayerView()
     }
     
     @IBOutlet weak var playerImageView: UIImageView!
