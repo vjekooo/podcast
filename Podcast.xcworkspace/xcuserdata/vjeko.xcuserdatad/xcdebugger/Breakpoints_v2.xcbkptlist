@@ -534,7 +534,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
+<<<<<<< HEAD
             landmarkName = "playerCloseButton(_:)"
+=======
+            landmarkName = "playerFastForwardAction(_:)"
+>>>>>>> features/swipe_gesture
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -550,8 +554,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
             endingLineNumber = "167"
+<<<<<<< HEAD
             landmarkName = "PlayerView"
             landmarkType = "3">
+=======
+            landmarkName = "playerTitleLabel"
+            landmarkType = "24">
+>>>>>>> features/swipe_gesture
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -614,8 +623,13 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
+<<<<<<< HEAD
             landmarkName = "playPauseButton"
             landmarkType = "24">
+=======
+            landmarkName = "playerTimeSliderAction(_:)"
+            landmarkType = "7">
+>>>>>>> features/swipe_gesture
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -645,7 +659,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
+<<<<<<< HEAD
             endingLineNumber = "179">
+=======
+            endingLineNumber = "179"
+            landmarkName = "PlayerView"
+            landmarkType = "3">
+>>>>>>> features/swipe_gesture
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -660,7 +680,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
+<<<<<<< HEAD
             landmarkName = "playerTimeSliderAction(_:)"
+=======
+            landmarkName = "playerRewindAction(_:)"
+>>>>>>> features/swipe_gesture
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

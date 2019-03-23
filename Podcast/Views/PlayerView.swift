@@ -55,7 +55,35 @@ class PlayerView: UIView {
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapToMaximize)))
         
+        self.minPlayerView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePlayerPanGesture)))
+        
         observePodcastTime()
+    }
+    
+    @objc func handlePlayerPanGesture(gesture: UIPanGestureRecognizer) {
+        if gesture.state == .changed {
+            let translation = gesture.translation(in: superview)
+            self.transform = CGAffineTransform(translationX: 0, y: translation.y)
+            
+            self.minPlayerView.alpha = 1 + translation.y / 200
+            self.maxPlayerView.alpha = -translation.y / 200
+            
+        } else if gesture.state == .ended {
+            let translation = gesture.translation(in: superview)
+            let velocity = gesture.velocity(in: superview)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.transform = .identity
+                
+                if translation.y < -200 || velocity.y < -560 {
+                    let mainTabBar = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+                    mainTabBar.maximizePlayerView(episode: nil)
+                } else {
+                    self.minPlayerView.alpha = 1
+                    self.maxPlayerView.alpha = 0
+                }
+            })
+        }
     }
     
     @objc func handleTapToMaximize() {
