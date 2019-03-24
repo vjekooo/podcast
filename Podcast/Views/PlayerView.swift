@@ -53,6 +53,13 @@ class PlayerView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error {
+            print("Audio session failed:", error)
+        }
+        
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapToMaximize)))
         
         self.minPlayerView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePlayerPanGesture)))
