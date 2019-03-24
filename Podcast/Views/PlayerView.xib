@@ -29,17 +29,33 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0T-j8-R7L">
-                                    <rect key="frame" x="58" y="0.0" width="88.5" height="55"/>
+                                    <rect key="frame" x="58" y="0.0" width="211" height="55"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-H2-9JY">
-                                    <rect key="frame" x="154.5" y="0.0" width="210.5" height="55"/>
+                                    <rect key="frame" x="277" y="0.0" width="40" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="oyg-7D-Nkp"/>
+                                    </constraints>
                                     <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Button" image="pause">
+                                    <state key="normal" image="pause">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGP-4v-GJk">
+                                    <rect key="frame" x="325" y="0.0" width="40" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="KUg-pF-8NE"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="fastforward15">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="miniPlayerFastForwardAction:" destination="6om-gV-yhv" eventType="touchUpInside" id="XHC-Aw-3gi"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

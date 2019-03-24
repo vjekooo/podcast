@@ -231,6 +231,16 @@ class PlayerView: UIView {
         }
     }
     
+    @IBAction func miniPlayerFastForwardAction(_ sender: Any) {
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        
+        let rewind = Float64(currentTime) + 15
+        
+        let seekTime = CMTimeMakeWithSeconds(rewind, preferredTimescale: Int32(NSEC_PER_SEC))
+        
+        player.seek(to: seekTime)
+    }
+    
     @IBOutlet weak var maxPlayerView: UIStackView!
     
     @IBOutlet weak var minPlayerView: UIView!
