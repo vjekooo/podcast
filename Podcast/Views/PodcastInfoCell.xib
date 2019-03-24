@@ -18,54 +18,71 @@
                 <rect key="frame" x="0.0" y="0.0" width="472" height="302.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-2u-wir">
-                        <rect key="frame" x="21" y="19" width="100" height="100"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7ma-Jq-jiR"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Meg-18-Tck"/>
-                            <constraint firstAttribute="height" constant="100" id="U7g-Kf-b1j"/>
-                            <constraint firstAttribute="width" constant="100" id="qNl-eI-BzC"/>
-                        </constraints>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-QG-Eax">
-                        <rect key="frame" x="131" y="19" width="311" height="56.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d7F-L5-L6s">
+                        <rect key="frame" x="10" y="10" width="452" height="292.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-j2-qD1">
-                                <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROVIDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-Rf-KVl">
-                                <rect key="frame" x="0.0" y="39.5" width="311" height="17"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uY9-1P-y4h">
+                                <rect key="frame" x="0.0" y="0.0" width="452" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-2u-wir">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Q76-Ce-FI8"/>
+                                            <constraint firstAttribute="width" constant="100" id="QGZ-ii-xdg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrM-Gd-iox">
+                                        <rect key="frame" x="100" y="0.0" width="10" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="IO0-xL-jEn"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="1Ce-QG-Eax">
+                                        <rect key="frame" x="110" y="0.0" width="342" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Podcast Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-j2-qD1">
+                                                <rect key="frame" x="0.0" y="0.0" width="342" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PROVIDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-Rf-KVl">
+                                                <rect key="frame" x="0.0" y="39.5" width="342" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-6Z-kih">
+                                                <rect key="frame" x="0.0" y="75.5" width="342" height="24.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <state key="normal" title="SUBSCRIBE">
+                                                    <color key="titleColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Podcast description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Nw-1X-ckx">
+                                <rect key="frame" x="0.0" y="100" width="452" height="192.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="uY9-1P-y4h" firstAttribute="top" secondItem="d7F-L5-L6s" secondAttribute="top" id="OQS-fM-Kvw"/>
+                            <constraint firstItem="uY9-1P-y4h" firstAttribute="leading" secondItem="d7F-L5-L6s" secondAttribute="leading" id="oLW-qW-ruQ"/>
+                            <constraint firstAttribute="trailing" secondItem="uY9-1P-y4h" secondAttribute="trailing" id="zaQ-7d-j8m"/>
+                        </constraints>
                     </stackView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Podcast description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Nw-1X-ckx">
-                        <rect key="frame" x="21" y="140" width="431" height="126"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-6Z-kih">
-                        <rect key="frame" x="130" y="91" width="81" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <state key="normal" title="SUBSCRIBE">
-                            <color key="titleColor" red="0.27688686940000001" green="0.3691164555" blue="0.70392275530000004" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="1Ce-QG-Eax" secondAttribute="trailing" constant="10" id="38z-TX-hk8"/>
-                    <constraint firstItem="1Ce-QG-Eax" firstAttribute="top" secondItem="Rgk-R7-S80" secondAttribute="topMargin" constant="8" id="BcI-pM-iav"/>
-                    <constraint firstItem="Flf-2u-wir" firstAttribute="top" secondItem="Rgk-R7-S80" secondAttribute="topMargin" constant="8" id="GMR-ZD-zme"/>
-                    <constraint firstItem="1Ce-QG-Eax" firstAttribute="leading" secondItem="Flf-2u-wir" secondAttribute="trailing" constant="10" id="cqs-R6-nvc"/>
-                    <constraint firstItem="Flf-2u-wir" firstAttribute="leading" secondItem="Rgk-R7-S80" secondAttribute="leadingMargin" constant="1" id="egj-Qq-MZq"/>
+                    <constraint firstItem="d7F-L5-L6s" firstAttribute="leading" secondItem="Rgk-R7-S80" secondAttribute="leading" constant="10" id="1iP-0X-1tv"/>
+                    <constraint firstAttribute="trailing" secondItem="d7F-L5-L6s" secondAttribute="trailing" constant="10" id="4pp-tb-bKY"/>
+                    <constraint firstAttribute="bottom" secondItem="d7F-L5-L6s" secondAttribute="bottom" id="QJI-0u-VK7"/>
+                    <constraint firstItem="d7F-L5-L6s" firstAttribute="top" secondItem="Rgk-R7-S80" secondAttribute="top" constant="10" id="jbW-it-Xd9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

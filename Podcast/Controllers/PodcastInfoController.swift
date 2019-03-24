@@ -33,6 +33,7 @@ class PodcastInfoController: UITableViewController {
                 self.podcastInfo = podcast
 
                 self.podcastTitle = feed.title ?? ""
+                self.podcastProvider = feed.iTunes?.iTunesAuthor ?? ""
                 self.podcastDescription = feed.description ?? ""
                 self.podcastImage = feed.image?.url ?? ""
                 
@@ -51,7 +52,7 @@ class PodcastInfoController: UITableViewController {
     
     var podcastTitle: String?
     var podcastDescription: String?
-    //var podcastProvider: String?
+    var podcastProvider: String?
     var podcastImage: String?
     
     var podcastInfo = [PodcastInfo]()
@@ -79,7 +80,7 @@ class PodcastInfoController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return 250
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -99,7 +100,7 @@ class PodcastInfoController: UITableViewController {
         
         cell.podcastTitleLabel.text = podcastTitle
         cell.podcastDescriptionText.text = podcastDescription
-        //cell.podcastProviderLabel.text = podcastProvider
+        cell.podcastProviderLabel.text = podcastProvider
         cell.podcastImageView.sd_setImage(with: url, completed: nil)
         
         return cell

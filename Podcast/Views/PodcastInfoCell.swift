@@ -11,6 +11,14 @@ import SDWebImage
 
 class PodcastInfoCell: UITableViewCell {
     
+    var podcastInfo: PodcastInfo! {
+        didSet {
+            podcastTitleLabel.text = podcastInfo.title
+            podcastProviderLabel.text = podcastInfo.provider
+            podcastDescriptionText.text = podcastInfo.description
+        }
+    }
+    
     @IBOutlet weak var podcastImageView: UIImageView!
     
     @IBOutlet weak var podcastTitleLabel: UILabel! {
@@ -22,14 +30,5 @@ class PodcastInfoCell: UITableViewCell {
     @IBOutlet weak var podcastProviderLabel: UILabel!
     
     @IBOutlet weak var podcastDescriptionText: UITextView!
-    
-    
-    var podcastInfo: PodcastInfo! {
-        didSet {
-            podcastTitleLabel.text = podcastInfo.title
-            //podcastProviderLabel.text = podcast.trackName
-            podcastDescriptionText.text = podcastInfo.description
-        }
-    }
     
 }
