@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import MediaPlayer
 
 class PlayerView: UIView {
     
@@ -53,6 +54,8 @@ class PlayerView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupCommandCenterControl()
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -65,6 +68,28 @@ class PlayerView: UIView {
         self.minPlayerView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePlayerPanGesture)))
         
         observePodcastTime()
+    }
+    
+    fileprivate func setupCommandCenterControl() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
+            
+            self.player.play()
+            return .success
+            
+        }
+        
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.pauseCommand.addTarget { (_) -> MPRemoteCommandHandlerStatus in
+            
+            self.player.pause()
+            return .success
+            
+        }
     }
     
     @objc func handlePlayerPanGesture(gesture: UIPanGestureRecognizer) {
